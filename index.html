@@ -5,27 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>mysmartlinq SDK Demo</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="https://cdn.jsdelivr.net/gh/OmMistry25/mysmartlinq-sdk/sdk.js"></script>
+  <script src="sdk.js" defer></script>
 </head>
 <body>
-  <div class="container">
-    <h1>mysmartlinq SDK Demo</h1>
+  <div class="card">
+    <h1><strong>mysmartlinq SDK Demo</strong></h1>
     <p>This demo uses our SDK to check if you are near a specific event location.</p>
-    <div id="output">📍 Checking your location...</div>
+    <p id="output">📍 Checking your location...</p>
   </div>
 
   <script>
-    SmartLinq.autoCheckin({
-      lat: 40.110588, // Replace with any event lat
-      lng: -88.228432, // Replace with any event lng
-      radiusMiles: 0.5,
-      eventId: "sample-demo-event",
-      onSuccess: (data) => {
-        document.getElementById("output").innerHTML = `✅ You're checked in! (${data.distance.toFixed(2)} mi from event)`;
-      },
-      onFail: (error) => {
-        document.getElementById("output").innerHTML = `❌ Not checked in: ${error}`;
-      }
+    window.addEventListener("DOMContentLoaded", () => {
+      SmartLinq.autoCheckin({
+        lat: 40.110588,           // Example event latitude
+        lng: -88.228432,          // Example event longitude
+        radiusMiles: 0.5,         // Default check-in radius
+        eventId: "demo-event",    // Optional identifier
+        onSuccess: (data) => {
+          document.getElementById("output").innerText =
+            `✅ You're checked in! Distance from event: ${data.distance.toFixed(2)} mi`;
+        },
+        onFail: (error) => {
+          document.getElementById("output").innerText =
+            `❌ Not checked in: ${error}`;
+        }
+      });
     });
   </script>
 </body>
