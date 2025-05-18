@@ -6,7 +6,7 @@ window.SmartLinq = {
     }
 
     navigator.geolocation.getCurrentPosition(function (position) {
-      fetch("https://smartcheckin.onrender.com", {
+      fetch("https://smartcheckin.onrender.com/api/checkin", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
