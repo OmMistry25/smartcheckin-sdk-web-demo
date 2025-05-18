@@ -1,0 +1,25 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f7f7f7;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 600px;
+  margin: 5rem auto;
+  background: white;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+h1 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+#output {
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
