@@ -1,6 +1,6 @@
 # SmartCheckIn SDK Demo
 
-Welcome to the **SmartCheckIn SDK Demo** — a simple front-end implementation that shows how to use our JavaScript SDK to detect if a user is near a specific geographic location (event check-in) **passively**, without requiring a manual click.
+Welcome to the **SmartCheckIn SDK Demo**: a simple front-end implementation that shows how to use our JavaScript SDK to detect if a user is near a specific geographic location (event check-in) **passively**, without requiring a manual click.
 
 Live Demo → [https://ommistry25.github.io/smartcheckin-sdk-demo/](https://ommistry25.github.io/smartcheckin-sdk-demo/)  
 
