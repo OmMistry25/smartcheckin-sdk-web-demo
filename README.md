@@ -1,84 +1,39 @@
-# SmartCheckIn SDK Demo
+# 📍 SmartLinq SDK
 
-Welcome to the **SmartCheckIn SDK Demo**: a simple front-end implementation that shows how to use our JavaScript SDK to detect if a user is near a specific geographic location (event check-in) **passively**, without requiring a manual click.
+The SmartLinq SDK allows you to passively check whether a user is within a certain location radius — perfect for event check-ins, location-based nudges, or gated access.
 
-Live Demo → [https://smartcheckin.onrender.com/](https://smartcheckin.onrender.com/)  
+## 🚀 Quick Start
 
----
+### 1. Add the SDK to your site
 
-## 🧠 What This Demo Shows
-
-This SDK:
-- Accesses the user's geolocation.
-- Sends location to the SmartLinq API.
-- Automatically determines whether the user is inside a defined event radius.
-- Renders check-in status on the front-end with zero clicks.
-
----
-
-## 📁 Project Structure
-
-```
-smartlinq-sdk-demo/
-│
-├── index.html          # Main landing page
-├── sdk.js              # SmartLinq SDK call to API
-├── style.css           # Minimal styling
-├── README.md           # You're here!
+```html
+<script src="sdk.js"></script>
 ```
 
----
-
-## ⚙️ How It Works
-
-1. When the page loads, the browser requests geolocation permission.
-2. If approved, the SDK sends the coordinates to your hosted API endpoint:
-   ```
-   POST https://smartcheckin.onrender.com/api/checkin
-   ```
-3. The backend checks if the coordinates are within the radius of the event.
-4. The response is shown on the screen:
-   - ✅ Checked In
-   - ❌ Not Checked In
-
----
-
-## 🔧 Configuration
-
-By default, the following event parameters are hardcoded in `sdk.js`:
+### 2. Call `autoCheckin()` when your page loads
 
 ```js
-const eventLat = 40.11;
-const eventLng = -88.22;
-const radius = 0.5; // miles
+SmartLinq.autoCheckin({
+  lat: 40.110588,
+  lng: -88.228432,
+  radiusMiles: 0.5,
+  eventId: "event-abc",
+  onSuccess: (data) => {
+    console.log("✅ Inside radius!", data);
+  },
+  onFail: (error) => {
+    console.warn("❌ Not checked in:", error);
+  }
+});
 ```
 
-You can update these to test against different event locations.
-
 ---
 
-## 🧪 Quick Testing
+## 📡 Backend API
 
-You can simulate different geolocations by:
-- Visiting [https://www.browserstack.com/geolocation](https://www.browserstack.com/geolocation)
-- Using Chrome DevTools → Sensors → Location Override
+**POST** `https://smartcheckin.onrender.com/api/checkin`
 
----
-
-## 🛠 Deployment Notes
-
-- Hosted via GitHub Pages
-- Backend hosted on [Render](https://render.com/)
-- CORS policy requires correct headers (already handled in backend deployment)
-
----
-
-## 📦 Backend Endpoint Spec
-
-**POST `/api/checkin`**
-
-**Request Body:**
-
+### Request Body:
 ```json
 {
   "lat": 40.110,
@@ -89,33 +44,33 @@ You can simulate different geolocations by:
 }
 ```
 
-**Response:**
-
+### Response:
 ```json
 {
-  "checkedIn": true,
-  "distance": 0.1
+  "result": "inside",
+  "distance": 0.12
 }
 ```
 
 ---
 
-## 🧑‍💻 Who Is This For?
+## 🧠 Use Cases
 
-This demo is useful for:
-- Event platforms wanting **passive check-ins**
-- Mobile-first experiences
-- Campus/event teams
-- Marketing teams analyzing location-based engagement
-
----
-
-## 📬 Contact
-
-Built by [Om Mistry](https://mysmartlinq.com)  
-Email: omist2@illinois.edu  
-Product: [mysmartlinq.com](https://mysmartlinq.com)
+- Passive check-in for events, coworking spaces, or conferences
+- Send reminders if users are not near the expected location
+- Restrict content until a user enters a geofenced zone
+- Provide customized experiences based on physical proximity
 
 ---
 
-> This is a part of MySmartLinq, which helps brands and platforms build intelligent QR and link flows that adapt based on time, location, and behavior.
+## ⚙️ Requirements
+
+- Browser must support `navigator.geolocation`
+- Users must accept location permissions in their browser
+- Works best with HTTPS and a stable backend server
+
+---
+
+## 📄 License
+
+MIT © 2025 SmartLinq
