@@ -1,6 +1,6 @@
-# 📍 SmartLinq SDK
+# 📍 SmartCheckIn SDK
 
-The SmartLinq SDK allows you to passively check whether a user is within a certain location radius — perfect for event check-ins, location-based nudges, or gated access.
+The SmartCheckIn SDK allows you to passively check whether a user is within a certain location radius, perfect for event check-ins, location-based nudges, or gated access.
 
 ## 🚀 Quick Start
 
