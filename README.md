@@ -68,9 +68,3 @@ SmartLinq.autoCheckin({
 - Browser must support `navigator.geolocation`
 - Users must accept location permissions in their browser
 - Works best with HTTPS and a stable backend server
-
----
-
-## 📄 License
-
-MIT © 2025 SmartLinq
