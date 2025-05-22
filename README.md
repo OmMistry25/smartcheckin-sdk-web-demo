@@ -2,7 +2,16 @@
 
 The SmartCheckIn SDK allows you to passively check whether a user is within a certain location radius, perfect for event check-ins, location-based nudges, or gated access.
 
-[![Watch the demo](https://cdn.loom.com/sessions/thumbnails/0b21bb13eff64552abdefe9512bc5528-with-play.gif)](https://www.loom.com/share/0b21bb13eff64552abdefe9512bc5528)
+## 🎥 Demo Video
+<div>
+    <a href="https://www.loom.com/share/0b21bb13eff64552abdefe9512bc5528">
+      <p>Watch the Demo here</p>
+    </a>
+    <a href="https://www.loom.com/share/0b21bb13eff64552abdefe9512bc5528">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/0b21bb13eff64552abdefe9512bc5528-b027d94f97c7901a-full-play.gif">
+    </a>
+  </div>
+
 
 
 ## 🚀 Quick Start
